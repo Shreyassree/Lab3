@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int *no_of_students = new int();
+    cout<<"Enter Number of Students: ";
+    cin>>*no_of_students;
+    cout<<"\n";
+
+    float *marks = new float[*no_of_students];
+    for(int i = 0; i < *no_of_students; i++) {
+        cout<<"Enter Mark: ";
+        cin>>marks[i];
+        cout<<"\n";
+    };
+    
+    float *sum = new float(0);
+    for(int i = 0; i < *no_of_students; i++)
+        *sum += marks[i];
+    delete[] marks;
+
+	cout<<"Avg Marks: "<<(*sum)/(*no_of_students)<<"\n";
+	delete sum;
+	delete no_of_students;
+	return 0;
+}
