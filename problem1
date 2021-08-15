@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+inline float to_foot(float* inches){
+    return *inches/12;
+}
+
+inline float to_yard(float* inches){
+    return to_foot(inches)/3;
+}
+
+int main() {
+    float *inches = new float();
+    cout<<"Enter Measurement in Inches: ";
+    cin>>*inches;
+	cout<<"\nMeasurement in Foot: "<<to_foot(inches)<<"\n";
+	cout<<"Measurement in Yards: "<<to_yard(inches)<<"\n";
+	delete inches;
+	return 0;
+}
