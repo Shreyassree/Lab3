@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+inline float cube(float* radius){
+    return (*radius)*(*radius)*(*radius);
+}
+
+inline float sphere(float* radius){
+    return cube(radius)*(1.3333333333)*(3.14);
+}
+inline float cylinder(float* radius,float* height){
+    return (*radius)*(*radius)*(3.14)*(*height);
+}    
+inline float cone(float* radius,float* height){
+    return (*radius)*(*radius)*(3.14)*(*height/3);
+}    
+int main() {
+    float *radius = new float();
+    cout<<"Enter radius: ";
+    cin>>*radius;
+    float *height = new float();
+    cout<<"Enter height: ";
+    cin>>*height;
+	cout<<"\nVolume of Cube: "<<cube(radius)<<"\n";
+	cout<<"Volume of Sphere: "<<sphere(radius)<<"\n";
+	cout<<"Volume of Cylinder: "<<cylinder(radius,height)<<"\n";
+	cout<<"Volume of Cone: "<<cone(radius,height)<<"\n";
+	delete radius;
+	delete height;
+	return 0;
+}
